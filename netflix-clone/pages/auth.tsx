@@ -83,10 +83,10 @@ const auth = () => {
                         <button onClick={variant === 'login' ? login : register} className='bg-red-700 py-3 text-white rounded-md w-full mt-10
                         hover:bg-red-800 transition'>{variant === 'login' ? 'Sign in' : 'Sign up'}</button>
                         <div className='flex flex-row items-center gap-4 mt-10 justify-center'>
-                            <div className='bg-white flex text-red-700 w-12 h-12 rounded-full items-center text-center cursor-pointer justify-center'>
+                            <div onClick={()=>signIn('google',{callbackUrl:'/profiles'})} className='bg-white flex text-red-700 w-12 h-12 rounded-full items-center text-center cursor-pointer justify-center'>
                                 <FaGoogle size={30}/>
                             </div>
-                            <div className='bg-white flex text-black w-12 h-12 rounded-full items-center text-center cursor-pointer justify-center'>
+                            <div onClick={()=>signIn('github',{callbackUrl:'/profiles'})} className='bg-white flex text-black w-12 h-12 rounded-full items-center text-center cursor-pointer justify-center'>
                                 <FaGithub size={30}/>
                             </div>
                         </div>
