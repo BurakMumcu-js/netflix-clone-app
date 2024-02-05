@@ -2,7 +2,7 @@ import { Inter } from "next/font/google";
 import { NextPageContext } from "next";
 import { getSession, signOut } from "next-auth/react";
 import useCurrentUser from "@/hooks/useCurrentUser";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export async function getServerSideProps(context:NextPageContext) {
