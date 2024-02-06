@@ -2,13 +2,19 @@ import React, { useCallback, useState } from 'react'
 import { BellIcon ,ChevronDownIcon,MagnifyingGlassIcon} from "@heroicons/react/24/solid"
 import NavItem from './NavItem'
 import MobileMenu from './MobileMenu';
+import AccountMenu from './AccountMenu';
 
 function Navbar() {
 
 const [mobileMenu,setMobileMenu] = useState(false);
+const [accountMenu,setAccountMenu] = useState(false);
 
 const toggleMobileMenu = useCallback(()=>{
     setMobileMenu((current) => !current);
+},[])
+
+const toggleAccountMenu = useCallback(()=>{
+    setAccountMenu((current) => !current);
 },[])
 
   return (
@@ -35,11 +41,12 @@ const toggleMobileMenu = useCallback(()=>{
             <div className='cursor-pointer'>
             <BellIcon className='w-5 text-white'></BellIcon>
             </div>
-            <div className='flex flex-row ml-auto gap-7 items-center'>
-<div className='w-6 h-6 lg:w-8 lg:h-8 transition rounded-lg overflow-hidden'>
+            <div onClick={toggleAccountMenu} className='cursor-pointer flex flex-row ml-auto gap-2 relative items-center'>
+<div  className='w-6 h-6 lg:w-8 lg:h-8 transition rounded-lg overflow-hidden'>
     <img src='/images/default-red.png'></img>
 </div>
 <ChevronDownIcon className='w-5 text-white'></ChevronDownIcon>
+<AccountMenu visible={accountMenu}></AccountMenu>
 </div>
         </div>
 
