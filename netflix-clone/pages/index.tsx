@@ -3,6 +3,8 @@ import { NextPageContext } from "next";
 import { getSession, signOut } from "next-auth/react";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import Navbar from "@/components/Navbar";
+import Billboard from "@/components/Billboard";
+import MovieList from "@/components/MovieList";
 const inter = Inter({ subsets: ["latin"] });
 
 export async function getServerSideProps(context:NextPageContext) {
@@ -27,6 +29,8 @@ export default function Home() {
   return (
 <>
 <Navbar></Navbar>
+<Billboard></Billboard>
+<MovieList></MovieList>
 </>
   );
 }
