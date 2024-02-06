@@ -4,6 +4,7 @@ import PlayButton from './PlayButton';
 
 function Billboard() {
     const {data} = useBillboard();
+   
   return (
     <div className='relative h-[32rem]'>
 
@@ -43,11 +44,6 @@ className='h-[32rem] lg:h-[44rem] object-cover brightness-50 w-full duration-500
     </div>
 
   </div>
- 
-
-
-
-
     </div>
   )
 }

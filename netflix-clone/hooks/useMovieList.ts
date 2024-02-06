@@ -1,16 +1,16 @@
 import fetcher from "@/lib/fetcher";
 import useSWR from "swr";
 
-const useBillboard = () => {
-    const {data,error,isLoading} = useSWR('/api/movies',fetcher,{
+const useMovieList = () => {
+    const {data,error,isValidating} = useSWR('/api/movie',fetcher,{
         revalidateIfStale:false,
         revalidateOnFocus:false,
         revalidateOnReconnect:false
     })
 
     return{
-        data,error,isLoading 
+        data,error,isValidating
     }
 }
 
-export default useBillboard;
+export default useMovieList;
