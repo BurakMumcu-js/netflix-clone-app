@@ -1,18 +1,39 @@
 import React from 'react'
-import {isEmpty} from "lodash";
+import {isEmpty} from 'lodash';
+import MovieCard from './MovieCard';
+
+export interface MovieInterface {
+    id: string;
+    title: string;
+    description: string;
+    thumbnailUrl: string;
+    videoUrl: string;
+    duration: string;
+    genre: string;
+  }
 
 interface MovieListProps {
     data:MovieInterface[];
     title:String
 }
 
-interface MovieInterface {
-
-}
 
 const MovieList: React.FC<MovieListProps> = ({data,title}) => {
+
+    if(isEmpty(data)){
+        return null;
+    }
   return (
-    <div>MovieList</div>
+    <div className='px-4 space-y-6'>
+        <div>
+        <p className='text-white text-md md:text-xl lg:text-2xl font-semibold my-5'>{title}</p>
+        <div className='grid grid-cols-3 gap-2'>
+        {data.map(movie=>(
+           <MovieCard data={movie} key={movie.id}></MovieCard>
+        ))}
+        </div>
+        </div>
+    </div>
   )
 }
 
