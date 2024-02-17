@@ -1,6 +1,6 @@
 import React from 'react'
 import { MovieInterface } from './MovieList'
-import { PlayIcon } from '@heroicons/react/24/solid'
+import { PlayIcon,ChevronDownIcon } from '@heroicons/react/24/solid'
 
 interface MovieCardProp {
     data: MovieInterface
@@ -19,11 +19,26 @@ const MovieCard: React.FC<MovieCardProp> = ({data}) => {
          shadow-xl rounded group-hover:opacity-85'/>
         <div className='z-20 bg-zinc-800 p-2 lg:p-4 absolute w-full shadow-lg rounded-b-md'>
             <div className='flex flex-row items-center gap-4'>
-            <div className='bg-white flex items-center justify-center rounded-full w-6 lg:w-8 h-7'>
+            <div className='bg-white flex transition hover:border-neutral-300 border-2 border-white
+             items-center cursor-pointer justify-center rounded-full w-6 lg:w-8 h-6 lg:h-8'>
             <PlayIcon className='text-black w-4 lg:w-6 cursor-pointer'></PlayIcon>
             </div>
+            <div>
+            <PlayIcon className='text-black w-4 lg:w-6 cursor-pointer'></PlayIcon>
             </div>
-           
+            <div className='ml-auto bg-white flex transition hover:border-neutral-300 border-2 border-white
+             items-center cursor-pointer w-6 lg:w-8 h-6 lg:h-8'>
+            <ChevronDownIcon className='text-black w-4 lg:w-6 cursor-pointer text-white'></ChevronDownIcon>
+            </div>
+            </div>
+            <p className='text-green-500 font-semibold mt-4 text-sm'>New <span className='ml-2 text-white'>
+              2024</span></p>
+              <div className='flex flex-row mt-4 gap-2 items-center'>
+                <p className='text-white text-sm'> {data.duration}</p>
+              </div>
+              <div className='flex flex-row mt-4 gap-2 items-center'>
+                <p className='text-white text-sm'> {data.genre}</p>
+              </div>
         </div>
         </div>
     </div>
