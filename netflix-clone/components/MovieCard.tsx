@@ -1,6 +1,7 @@
 import React from 'react'
 import { MovieInterface } from './MovieList'
 import { PlayIcon,ChevronDownIcon } from '@heroicons/react/24/solid'
+import FavoriButton from './FavoriButton'
 
 interface MovieCardProp {
     data: MovieInterface
@@ -24,7 +25,7 @@ const MovieCard: React.FC<MovieCardProp> = ({data}) => {
             <PlayIcon className='text-black w-4 lg:w-6 cursor-pointer'></PlayIcon>
             </div>
             <div>
-            <PlayIcon className='text-black w-4 lg:w-6 cursor-pointer'></PlayIcon>
+           <FavoriButton movieId={data.id}></FavoriButton>
             </div>
             <div className='ml-auto bg-white flex transition hover:border-neutral-300 border-2 border-white
              items-center cursor-pointer w-6 lg:w-8 h-6 lg:h-8'>
