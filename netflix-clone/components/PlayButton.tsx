@@ -3,7 +3,8 @@ import React from 'react'
 import { PlayIcon } from '@heroicons/react/24/solid'
 
 interface PlayButtonProps{
-    movieId:string
+  movieId?: string,
+  children?: React.ReactNode
 }
 
 const PlayButton: React.FC<PlayButtonProps>=({movieId})=> {

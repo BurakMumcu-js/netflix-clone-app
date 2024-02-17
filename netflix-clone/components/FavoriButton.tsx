@@ -5,8 +5,8 @@ import { PlusIcon,CheckIcon } from '@heroicons/react/24/solid';
 import axios from 'axios';
 
 interface FavoriButtonProps {
-    movieId: string,
-
+    movieId?: string,
+    children?: React.ReactNode
 }
 
 const FavoriButton: React.FC<FavoriButtonProps> = ({movieId}) => {
