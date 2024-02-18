@@ -8,7 +8,7 @@ import MovieList from "@/components/MovieList";
 import useMovieList from "@/hooks/useMovieList";
 import useFavoriMovie from "@/hooks/useFavorites";
 import useInfoModalStore from "@/hooks/useInfoModalStore";
-import InfoModal from "@/components/infoModal";
+import InfoModal from "@/components/InfoModal";
 const inter = Inter({ subsets: ["latin"] });
 
 export async function getServerSideProps(context:NextPageContext) {
