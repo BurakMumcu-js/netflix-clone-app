@@ -1,0 +1,17 @@
+name: netflix-clone CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: windows-latest 
+    steps:
+      - uses: actions/checkout@v1
+      - name: use Next.js version 14
+      - uses: actions/setup-next@v1
+        with: 
+          next-version: '14'
+      - run: npm install 
+      - run: npm run dev
